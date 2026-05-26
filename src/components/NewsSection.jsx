@@ -11,8 +11,8 @@ const news = [
   {
     icon: <HealthAndSafetyIcon sx={{ fontSize: 40 }} />,
     category: 'Salud Mental',
-    categoryColor: '#381d92',
-    categoryBg: '#F0ECFF',
+    categoryColor: '#2D3748',
+    categoryBg: '#EDF2F7',
     title: 'La importancia del apoyo familiar en la recuperación',
     date: '15 Ene 2025',
     excerpt:
@@ -57,22 +57,22 @@ const NewsSection = () => (
             display: 'inline-flex',
             p: 1.8,
             borderRadius: '50%',
-            bgcolor: '#F0ECFF',
+            bgcolor: '#EDF2F7',
             mb: 2.5,
           }}
         >
-          <ArticleIcon sx={{ fontSize: 40, color: '#381d92' }} />
+          <ArticleIcon sx={{ fontSize: 40, color: '#2D3748' }} />
         </Box>
         <Typography
           variant="overline"
-          sx={{ display: 'block', color: '#381d92', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3, mb: 1.5 }}
+          sx={{ display: 'block', color: '#2D3748', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3, mb: 1.5 }}
         >
           NOTICIAS Y RECURSOS
         </Typography>
         <Typography
           variant="h3"
           component="h2"
-          sx={{ fontWeight: 700, mb: 2.5, color: '#381d92', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
+          sx={{ fontWeight: 700, mb: 2.5, color: '#2D3748', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
         >
           Noticias y Recursos
         </Typography>
@@ -109,10 +109,10 @@ const NewsSection = () => (
                   flexDirection: 'column',
                   cursor: 'pointer',
                   borderRadius: 3,
-                  border: '1px solid rgba(56,29,146,0.07)',
-                  boxShadow: '0 2px 12px rgba(56,29,146,0.06)',
+                  border: '1px solid rgba(45,55,72,0.07)',
+                  boxShadow: '0 2px 12px rgba(45,55,72,0.06)',
                   transition: 'box-shadow 0.3s',
-                  '&:hover': { boxShadow: '0 16px 40px rgba(56,29,146,0.14)' },
+                  '&:hover': { boxShadow: '0 16px 40px rgba(45,55,72,0.14)' },
                 }}
               >
                 <CardContent sx={{ flexGrow: 1, p: 3.5 }}>
@@ -153,7 +153,7 @@ const NewsSection = () => (
                   <Typography
                     variant="h6"
                     component="h3"
-                    sx={{ fontWeight: 700, mb: 1.5, color: '#381d92', lineHeight: 1.4, fontSize: '1rem' }}
+                    sx={{ fontWeight: 700, mb: 1.5, color: '#2D3748', lineHeight: 1.4, fontSize: '1rem' }}
                   >
                     {item.title}
                   </Typography>

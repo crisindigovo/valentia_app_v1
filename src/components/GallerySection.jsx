@@ -88,7 +88,7 @@ const GallerySection = () => {
   if (loadingImages) {
     return (
       <Box sx={{ py: 10, display: 'flex', justifyContent: 'center' }}>
-        <CircularProgress sx={{ color: '#381d92' }} />
+        <CircularProgress sx={{ color: '#2D3748' }} />
       </Box>
     );
   }
@@ -96,7 +96,7 @@ const GallerySection = () => {
   const currentImage = images[current];
 
   return (
-    <Box id="galeria" sx={{ py: 12, bgcolor: '#F8F7FF' }}>
+    <Box id="galeria" sx={{ py: 12, bgcolor: '#F7F8FA' }}>
       <Container maxWidth="lg">
         {/* Header */}
         <Box
@@ -109,14 +109,14 @@ const GallerySection = () => {
         >
           <Typography
             variant="overline"
-            sx={{ color: '#381d92', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3 }}
+            sx={{ color: '#2D3748', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3 }}
           >
             NUESTRAS INSTALACIONES
           </Typography>
           <Typography
             variant="h3"
             component="h2"
-            sx={{ fontWeight: 700, mt: 1.5, mb: 2, color: '#381d92', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
+            sx={{ fontWeight: 700, mt: 1.5, mb: 2, color: '#2D3748', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
           >
             Galería
           </Typography>
@@ -135,7 +135,7 @@ const GallerySection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOptions}
-          sx={{ position: 'relative', borderRadius: 3, overflow: 'hidden', boxShadow: '0 20px 60px rgba(56,29,146,0.20)', bgcolor: '#000' }}
+          sx={{ position: 'relative', borderRadius: 3, overflow: 'hidden', boxShadow: '0 20px 60px rgba(45,55,72,0.20)', bgcolor: '#000' }}
           onMouseEnter={() => setIsPlaying(false)}
           onMouseLeave={() => setIsPlaying(true)}
         >
@@ -171,7 +171,7 @@ const GallerySection = () => {
             onClick={prev}
             sx={{
               position: 'absolute', left: { xs: 8, md: 16 }, top: '50%', transform: 'translateY(-50%)',
-              bgcolor: 'rgba(255,255,255,0.85)', color: '#381d92', zIndex: 2,
+              bgcolor: 'rgba(255,255,255,0.85)', color: '#2D3748', zIndex: 2,
               '&:hover': { bgcolor: 'white', transform: 'translateY(-50%) scale(1.1)' },
               transition: 'all 0.2s',
             }}
@@ -184,7 +184,7 @@ const GallerySection = () => {
             onClick={next}
             sx={{
               position: 'absolute', right: { xs: 8, md: 16 }, top: '50%', transform: 'translateY(-50%)',
-              bgcolor: 'rgba(255,255,255,0.85)', color: '#381d92', zIndex: 2,
+              bgcolor: 'rgba(255,255,255,0.85)', color: '#2D3748', zIndex: 2,
               '&:hover': { bgcolor: 'white', transform: 'translateY(-50%) scale(1.1)' },
               transition: 'all 0.2s',
             }}
@@ -198,7 +198,7 @@ const GallerySection = () => {
             size="small"
             sx={{
               position: 'absolute', top: 12, right: 12,
-              bgcolor: 'rgba(255,255,255,0.8)', color: '#381d92', zIndex: 2,
+              bgcolor: 'rgba(255,255,255,0.8)', color: '#2D3748', zIndex: 2,
               '&:hover': { bgcolor: 'white' },
             }}
           >
@@ -209,7 +209,7 @@ const GallerySection = () => {
           <Box
             sx={{
               position: 'absolute', top: 12, left: 12,
-              bgcolor: 'rgba(56,29,146,0.75)', color: 'white',
+              bgcolor: 'rgba(45,55,72,0.75)', color: 'white',
               px: 1.5, py: 0.5, borderRadius: 2,
               fontSize: '0.8rem', fontWeight: 600, zIndex: 2,
             }}
@@ -227,10 +227,10 @@ const GallerySection = () => {
               sx={{
                 width: i === current ? 28 : 10, height: 10,
                 borderRadius: 5,
-                bgcolor: i === current ? '#381d92' : '#c4b8f0',
+                bgcolor: i === current ? '#2D3748' : '#c4b8f0',
                 cursor: 'pointer',
                 transition: 'all 0.3s',
-                '&:hover': { bgcolor: '#5b3cc4' },
+                '&:hover': { bgcolor: '#4A5568' },
               }}
             />
           ))}
@@ -257,7 +257,7 @@ const GallerySection = () => {
                 width: 100, height: 65,
                 objectFit: 'cover', borderRadius: 1.5,
                 cursor: 'pointer', flexShrink: 0,
-                border: i === current ? '3px solid #381d92' : '3px solid transparent',
+                border: i === current ? '3px solid #2D3748' : '3px solid transparent',
                 opacity: i === current ? 1 : 0.6,
                 transition: 'all 0.2s',
                 '&:hover': { opacity: 1 },

@@ -57,7 +57,7 @@ const HeroSection = () => {
           position: 'absolute',
           inset: 0,
           backgroundImage:
-            'radial-gradient(circle at 18% 40%, rgba(255,255,255,0.07) 0%, transparent 48%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%), radial-gradient(circle at 60% 80%, rgba(91,60,196,0.35) 0%, transparent 50%)',
+            'radial-gradient(circle at 18% 40%, rgba(255,255,255,0.07) 0%, transparent 48%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%), radial-gradient(circle at 60% 80%, rgba(74,85,104,0.35) 0%, transparent 50%)',
           pointerEvents: 'none',
         }}
       />
@@ -181,14 +181,14 @@ const HeroSection = () => {
                 onClick={() => handleScroll('#sobre')}
                 sx={{
                   bgcolor: 'white',
-                  color: '#381d92',
+                  color: '#2D3748',
                   px: 4,
                   py: 1.6,
                   fontSize: '1rem',
                   fontWeight: 700,
                   borderRadius: '100px',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.18)',
-                  '&:hover': { bgcolor: '#f0ecff' },
+                  '&:hover': { bgcolor: '#EDF2F7' },
                 }}
               >
                 Descubre más

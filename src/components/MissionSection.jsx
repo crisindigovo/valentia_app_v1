@@ -13,8 +13,8 @@ const pillars = [
     title: 'Atención Personalizada',
     description:
       'Creamos planes de rehabilitación únicos para cada persona, adaptados a sus necesidades específicas y objetivos individuales.',
-    accent: '#381d92',
-    bg: '#F0ECFF',
+    accent: '#2D3748',
+    bg: '#EDF2F7',
   },
   {
     icon: <GroupsIcon sx={{ fontSize: 44 }} />,
@@ -35,7 +35,7 @@ const pillars = [
 ];
 
 const MissionSection = () => (
-  <Box id="sobre" sx={{ py: 12, bgcolor: '#F8F7FF' }}>
+  <Box id="sobre" sx={{ py: 12, bgcolor: '#F7F8FA' }}>
     <Container maxWidth="lg">
       {/* Header */}
       <Box
@@ -51,22 +51,22 @@ const MissionSection = () => (
             display: 'inline-flex',
             p: 1.8,
             borderRadius: '50%',
-            bgcolor: '#F0ECFF',
+            bgcolor: '#EDF2F7',
             mb: 2.5,
           }}
         >
-          <TrendingUpIcon sx={{ fontSize: 42, color: '#381d92' }} />
+          <TrendingUpIcon sx={{ fontSize: 42, color: '#2D3748' }} />
         </Box>
         <Typography
           variant="overline"
-          sx={{ display: 'block', color: '#381d92', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3, mb: 1.5 }}
+          sx={{ display: 'block', color: '#2D3748', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3, mb: 1.5 }}
         >
           NUESTRA MISIÓN
         </Typography>
         <Typography
           variant="h3"
           component="h2"
-          sx={{ fontWeight: 700, mb: 2.5, color: '#381d92', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
+          sx={{ fontWeight: 700, mb: 2.5, color: '#2D3748', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
         >
           Avanzamos juntos hacia tu bienestar integral
         </Typography>
@@ -102,10 +102,10 @@ const MissionSection = () => (
                   display: 'flex',
                   flexDirection: 'column',
                   borderRadius: 3,
-                  border: '1px solid rgba(56,29,146,0.07)',
-                  boxShadow: '0 2px 12px rgba(56,29,146,0.06)',
+                  border: '1px solid rgba(45,55,72,0.07)',
+                  boxShadow: '0 2px 12px rgba(45,55,72,0.06)',
                   transition: 'box-shadow 0.3s',
-                  '&:hover': { boxShadow: '0 14px 36px rgba(56,29,146,0.14)' },
+                  '&:hover': { boxShadow: '0 14px 36px rgba(45,55,72,0.14)' },
                 }}
               >
                 <CardContent sx={{ flexGrow: 1, p: 4, textAlign: 'center' }}>
@@ -124,7 +124,7 @@ const MissionSection = () => (
                   <Typography
                     variant="h6"
                     component="h3"
-                    sx={{ fontWeight: 700, mb: 1.5, color: '#381d92' }}
+                    sx={{ fontWeight: 700, mb: 1.5, color: '#2D3748' }}
                   >
                     {pillar.title}
                   </Typography>
@@ -150,7 +150,7 @@ const MissionSection = () => (
         <Box
           sx={{
             p: { xs: 4, md: 5 },
-            background: 'linear-gradient(135deg, #381d92 0%, #5b3cc4 100%)',
+            background: 'linear-gradient(135deg, #2D3748 0%, #4A5568 100%)',
             borderRadius: 3,
             textAlign: 'center',
             color: 'white',

@@ -72,7 +72,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <Box id="contacto" sx={{ py: 12, bgcolor: '#F8F7FF' }}>
+      <Box id="contacto" sx={{ py: 12, bgcolor: '#F7F8FA' }}>
         <Container maxWidth="md">
           <Box
             component={motion.div}
@@ -88,22 +88,22 @@ const ContactForm = () => {
                   display: 'inline-flex',
                   p: 1.8,
                   borderRadius: '50%',
-                  bgcolor: '#F0ECFF',
+                  bgcolor: '#EDF2F7',
                   mb: 2.5,
                 }}
               >
-                <EmailIcon sx={{ fontSize: 40, color: '#381d92' }} />
+                <EmailIcon sx={{ fontSize: 40, color: '#2D3748' }} />
               </Box>
               <Typography
                 variant="overline"
-                sx={{ display: 'block', color: '#381d92', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3, mb: 1.5 }}
+                sx={{ display: 'block', color: '#2D3748', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3, mb: 1.5 }}
               >
                 ESCRÍBENOS
               </Typography>
               <Typography
                 variant="h3"
                 component="h2"
-                sx={{ fontWeight: 700, mb: 2, color: '#381d92', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
+                sx={{ fontWeight: 700, mb: 2, color: '#2D3748', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
               >
                 Contáctanos
               </Typography>
@@ -118,8 +118,8 @@ const ContactForm = () => {
                 bgcolor: 'white',
                 borderRadius: 3,
                 p: { xs: 3, md: 5 },
-                boxShadow: '0 4px 24px rgba(56,29,146,0.10)',
-                border: '1px solid rgba(56,29,146,0.07)',
+                boxShadow: '0 4px 24px rgba(45,55,72,0.10)',
+                border: '1px solid rgba(45,55,72,0.07)',
               }}
             >
               <Box component="form" onSubmit={handleSubmit} noValidate>
@@ -205,7 +205,7 @@ const ContactForm = () => {
                   <Grid item xs={12}>
                     <Button
                       component={motion.button}
-                      whileHover={{ y: -3, boxShadow: '0 10px 28px rgba(56,29,146,0.30)' }}
+                      whileHover={{ y: -3, boxShadow: '0 10px 28px rgba(45,55,72,0.30)' }}
                       whileTap={{ scale: 0.97 }}
                       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                       type="submit"
@@ -215,12 +215,12 @@ const ContactForm = () => {
                       endIcon={<SendIcon />}
                       sx={{
                         py: 1.6,
-                        bgcolor: '#381d92',
+                        bgcolor: '#2D3748',
                         fontWeight: 700,
                         fontSize: '1rem',
                         borderRadius: '100px',
-                        boxShadow: '0 4px 16px rgba(56,29,146,0.25)',
-                        '&:hover': { bgcolor: '#2a1570' },
+                        boxShadow: '0 4px 16px rgba(45,55,72,0.25)',
+                        '&:hover': { bgcolor: '#1A202C' },
                       }}
                     >
                       Enviar Mensaje

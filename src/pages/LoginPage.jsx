@@ -41,7 +41,7 @@ const LoginPage = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #381d92 0%, #5b3cc4 100%)',
+        background: 'linear-gradient(135deg, #2D3748 0%, #4A5568 100%)',
         position: 'relative',
       }}
     >
@@ -68,16 +68,16 @@ const LoginPage = () => {
                 width: 70,
                 height: 70,
                 borderRadius: '50%',
-                bgcolor: '#f0ecff',
+                bgcolor: '#EDF2F7',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 mb: 2,
               }}
             >
-              <LocalHospitalIcon sx={{ fontSize: 36, color: '#381d92' }} />
+              <LocalHospitalIcon sx={{ fontSize: 36, color: '#2D3748' }} />
             </Box>
-            <Typography variant="h5" fontWeight={700} color="#381d92">
+            <Typography variant="h5" fontWeight={700} color="#2D3748">
               Panel Admin
             </Typography>
             <Typography variant="body2" color="text.secondary" mt={0.5}>
@@ -127,11 +127,11 @@ const LoginPage = () => {
               fullWidth
               disabled={loading}
               sx={{
-                bgcolor: '#381d92',
+                bgcolor: '#2D3748',
                 py: 1.5,
                 fontSize: '1rem',
                 fontWeight: 600,
-                '&:hover': { bgcolor: '#2a1570' },
+                '&:hover': { bgcolor: '#1A202C' },
               }}
             >
               {loading ? <CircularProgress size={24} color="inherit" /> : 'Ingresar'}

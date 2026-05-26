@@ -57,14 +57,14 @@ const ServicesSection = () => (
       >
         <Typography
           variant="overline"
-          sx={{ color: '#381d92', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3 }}
+          sx={{ color: '#2D3748', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3 }}
         >
           NUESTROS SERVICIOS
         </Typography>
         <Typography
           variant="h3"
           component="h2"
-          sx={{ fontWeight: 700, mb: 2.5, mt: 1.5, color: '#381d92', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
+          sx={{ fontWeight: 700, mb: 2.5, mt: 1.5, color: '#2D3748', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
         >
           Tratamientos Especializados
         </Typography>
@@ -101,10 +101,10 @@ const ServicesSection = () => (
                   flexDirection: 'column',
                   overflow: 'hidden',
                   borderRadius: 3,
-                  border: '1px solid rgba(56,29,146,0.07)',
-                  boxShadow: '0 2px 12px rgba(56,29,146,0.07)',
+                  border: '1px solid rgba(45,55,72,0.07)',
+                  boxShadow: '0 2px 12px rgba(45,55,72,0.07)',
                   transition: 'box-shadow 0.3s',
-                  '&:hover': { boxShadow: '0 16px 40px rgba(56,29,146,0.16)' },
+                  '&:hover': { boxShadow: '0 16px 40px rgba(45,55,72,0.16)' },
                 }}
               >
                 {/* Icon header */}
@@ -143,7 +143,7 @@ const ServicesSection = () => (
                   <Typography
                     variant="h6"
                     component="h3"
-                    sx={{ fontWeight: 700, mb: 1.5, color: '#381d92', fontSize: '1rem' }}
+                    sx={{ fontWeight: 700, mb: 1.5, color: '#2D3748', fontSize: '1rem' }}
                   >
                     {service.title}
                   </Typography>
@@ -168,7 +168,7 @@ const ServicesSection = () => (
       >
         <Button
           component={motion.button}
-          whileHover={{ y: -3, boxShadow: '0 10px 28px rgba(56,29,146,0.30)' }}
+          whileHover={{ y: -3, boxShadow: '0 10px 28px rgba(45,55,72,0.30)' }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           variant="contained"
@@ -176,14 +176,14 @@ const ServicesSection = () => (
           endIcon={<ArrowForwardIcon />}
           onClick={() => handleScroll('#contacto')}
           sx={{
-            bgcolor: '#381d92',
+            bgcolor: '#2D3748',
             px: 5,
             py: 1.6,
             fontSize: '1rem',
             fontWeight: 700,
             borderRadius: '100px',
-            boxShadow: '0 4px 16px rgba(56,29,146,0.25)',
-            '&:hover': { bgcolor: '#2a1570' },
+            boxShadow: '0 4px 16px rgba(45,55,72,0.25)',
+            '&:hover': { bgcolor: '#1A202C' },
           }}
         >
           Conoce más sobre nuestros servicios

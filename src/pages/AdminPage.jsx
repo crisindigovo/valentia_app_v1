@@ -126,7 +126,7 @@ const AdminPage = () => {
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: '#f8f7ff' }}>
       {/* Topbar */}
-      <Box sx={{ bgcolor: '#381d92', color: 'white', py: 1.5, px: 3, boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
+      <Box sx={{ bgcolor: '#2D3748', color: 'white', py: 1.5, px: 3, boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}>
         <Container maxWidth="lg">
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
@@ -157,7 +157,7 @@ const AdminPage = () => {
       <Container maxWidth="lg" sx={{ py: 4 }}>
         {/* Upload section */}
         <Paper sx={{ p: 3, mb: 4, borderRadius: 2 }}>
-          <Typography variant="h6" fontWeight={700} mb={2} color="#381d92">
+          <Typography variant="h6" fontWeight={700} mb={2} color="#2D3748">
             Subir nueva imagen
           </Typography>
 
@@ -174,7 +174,7 @@ const AdminPage = () => {
                 width: 220,
                 height: 150,
                 border: '2px dashed',
-                borderColor: preview ? '#381d92' : '#c4b8f0',
+                borderColor: preview ? '#2D3748' : '#c4b8f0',
                 borderRadius: 2,
                 display: 'flex',
                 flexDirection: 'column',
@@ -184,7 +184,7 @@ const AdminPage = () => {
                 overflow: 'hidden',
                 bgcolor: '#faf9ff',
                 transition: 'all 0.2s',
-                '&:hover': { borderColor: '#381d92', bgcolor: '#f0ecff' },
+                '&:hover': { borderColor: '#2D3748', bgcolor: '#EDF2F7' },
               }}
             >
               {preview ? (
@@ -216,7 +216,7 @@ const AdminPage = () => {
                   onClick={handleUpload}
                   disabled={!selectedFile || uploading}
                   startIcon={uploading ? <CircularProgress size={18} color="inherit" /> : <CloudUploadIcon />}
-                  sx={{ bgcolor: '#381d92', '&:hover': { bgcolor: '#2a1570' } }}
+                  sx={{ bgcolor: '#2D3748', '&:hover': { bgcolor: '#1A202C' } }}
                 >
                   {uploading ? 'Subiendo...' : 'Subir imagen'}
                 </Button>
@@ -224,7 +224,7 @@ const AdminPage = () => {
                   <Button
                     variant="outlined"
                     onClick={() => { setSelectedFile(null); setPreview(null); setCaption(''); }}
-                    sx={{ borderColor: '#c4b8f0', color: '#381d92' }}
+                    sx={{ borderColor: '#c4b8f0', color: '#2D3748' }}
                   >
                     Cancelar
                   </Button>
@@ -236,18 +236,18 @@ const AdminPage = () => {
 
         {/* Images grid */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-          <Typography variant="h6" fontWeight={700} color="#381d92">
+          <Typography variant="h6" fontWeight={700} color="#2D3748">
             Imágenes en galería
           </Typography>
           <Chip
             label={`${images.length} imagen${images.length !== 1 ? 'es' : ''}`}
-            sx={{ bgcolor: '#f0ecff', color: '#381d92', fontWeight: 600 }}
+            sx={{ bgcolor: '#EDF2F7', color: '#2D3748', fontWeight: 600 }}
           />
         </Box>
 
         {loading ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
-            <CircularProgress sx={{ color: '#381d92' }} />
+            <CircularProgress sx={{ color: '#2D3748' }} />
           </Box>
         ) : images.length === 0 ? (
           <Paper sx={{ p: 8, textAlign: 'center', borderRadius: 2 }}>
@@ -260,7 +260,7 @@ const AdminPage = () => {
           <Grid container spacing={3}>
             {images.map((image) => (
               <Grid item xs={12} sm={6} md={4} key={image.id}>
-                <Card sx={{ borderRadius: 2, boxShadow: '0 2px 12px rgba(56,29,146,0.08)', height: '100%' }}>
+                <Card sx={{ borderRadius: 2, boxShadow: '0 2px 12px rgba(45,55,72,0.08)', height: '100%' }}>
                   <CardMedia
                     component="img"
                     height="180"
@@ -288,7 +288,7 @@ const AdminPage = () => {
                     {editingId === image.id ? (
                       <>
                         <Tooltip title="Guardar">
-                          <IconButton size="small" onClick={() => handleSaveCaption(image)} sx={{ color: '#381d92' }}>
+                          <IconButton size="small" onClick={() => handleSaveCaption(image)} sx={{ color: '#2D3748' }}>
                             <SaveIcon fontSize="small" />
                           </IconButton>
                         </Tooltip>
@@ -303,7 +303,7 @@ const AdminPage = () => {
                         <IconButton
                           size="small"
                           onClick={() => { setEditingId(image.id); setEditCaption(image.caption); }}
-                          sx={{ color: '#381d92' }}
+                          sx={{ color: '#2D3748' }}
                         >
                           <EditIcon fontSize="small" />
                         </IconButton>

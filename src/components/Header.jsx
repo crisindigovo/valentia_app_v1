@@ -61,7 +61,7 @@ const Header = () => {
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <Box component="img" src={logoSrc} alt="Logo Valentía" sx={{ height: 38, width: 'auto' }} />
           <Box>
-            <Typography sx={{ fontWeight: 800, color: '#381d92', fontSize: '0.95rem', lineHeight: 1.2 }}>
+            <Typography sx={{ fontWeight: 800, color: '#2D3748', fontSize: '0.95rem', lineHeight: 1.2 }}>
               Valentía
             </Typography>
             <Typography sx={{ fontSize: '0.72rem', color: 'text.secondary', lineHeight: 1 }}>
@@ -84,7 +84,7 @@ const Header = () => {
                 px: 2,
                 borderRadius: 2,
                 mb: 0.5,
-                '&:hover': { bgcolor: '#F8F7FF', color: '#381d92' },
+                '&:hover': { bgcolor: '#F7F8FA', color: '#2D3748' },
               }}
             >
               <ListItemText
@@ -102,7 +102,7 @@ const Header = () => {
           variant="contained"
           onClick={() => { setMobileOpen(false); navigate(isAdmin ? '/admin' : '/login'); }}
           startIcon={isAdmin ? <AdminPanelSettingsIcon /> : <LoginIcon />}
-          sx={{ borderRadius: 2, bgcolor: '#381d92', '&:hover': { bgcolor: '#2a1570' } }}
+          sx={{ borderRadius: 2, bgcolor: '#2D3748', '&:hover': { bgcolor: '#1A202C' } }}
         >
           {isAdmin ? 'Panel Admin' : 'Iniciar sesión'}
         </Button>
@@ -120,7 +120,7 @@ const Header = () => {
         transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
         sx={{
           bgcolor: 'white',
-          boxShadow: scrolled ? '0 2px 20px rgba(56,29,146,0.10)' : '0 1px 0 rgba(56,29,146,0.06)',
+          boxShadow: scrolled ? '0 2px 20px rgba(45,55,72,0.10)' : '0 1px 0 rgba(45,55,72,0.06)',
           transition: 'box-shadow 0.3s',
         }}
       >
@@ -144,7 +144,7 @@ const Header = () => {
                 variant="h6"
                 component="div"
                 sx={{
-                  color: '#381d92',
+                  color: '#2D3748',
                   fontWeight: 800,
                   letterSpacing: '-0.02em',
                   fontSize: { xs: '1rem', md: '1.05rem' },
@@ -172,7 +172,7 @@ const Header = () => {
                   <Button
                     key={item.label}
                     component={motion.button}
-                    whileHover={{ color: '#381d92' }}
+                    whileHover={{ color: '#2D3748' }}
                     onClick={() => handleMenuClick(item.href)}
                     sx={{
                       color: 'text.secondary',
@@ -180,7 +180,7 @@ const Header = () => {
                       fontSize: '0.88rem',
                       px: 1.5,
                       borderRadius: '8px',
-                      '&:hover': { color: '#381d92', bgcolor: '#F8F7FF' },
+                      '&:hover': { color: '#2D3748', bgcolor: '#F7F8FA' },
                       transition: 'all 0.2s',
                     }}
                   >
@@ -192,7 +192,7 @@ const Header = () => {
                     <IconButton
                       color="primary"
                       onClick={() => navigate(isAdmin ? '/admin' : '/login')}
-                      sx={{ bgcolor: '#F0ECFF', '&:hover': { bgcolor: '#e0d8ff' } }}
+                      sx={{ bgcolor: '#EDF2F7', '&:hover': { bgcolor: '#CBD5E0' } }}
                     >
                       {isAdmin ? <AdminPanelSettingsIcon /> : <LoginIcon />}
                     </IconButton>

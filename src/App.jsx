@@ -9,9 +9,9 @@ import AdminPage from './pages/AdminPage';
 
 const theme = createTheme({
   palette: {
-    primary: { main: '#381d92', light: '#5b3cc4', dark: '#2a1570', contrastText: '#ffffff' },
-    secondary: { main: '#5b3cc4', light: '#8f70d8', dark: '#3a2490', contrastText: '#ffffff' },
-    background: { default: '#fafafa', paper: '#ffffff', subtle: '#F8F7FF', muted: '#F2F2FA' },
+    primary: { main: '#2D3748', light: '#4A5568', dark: '#1A202C', contrastText: '#ffffff' },
+    secondary: { main: '#4A5568', light: '#718096', dark: '#2D3748', contrastText: '#ffffff' },
+    background: { default: '#fafafa', paper: '#ffffff', subtle: '#F7F8FA', muted: '#EDF2F7' },
     services: {
       sports: '#0284C7',
       occupational: '#059669',
@@ -22,13 +22,13 @@ const theme = createTheme({
   shape: { borderRadius: 14 },
   shadows: [
     'none',
-    '0 1px 3px rgba(56,29,146,0.07)',
-    '0 2px 8px rgba(56,29,146,0.10)',
-    '0 4px 16px rgba(56,29,146,0.12)',
-    '0 8px 24px rgba(56,29,146,0.14)',
-    '0 12px 32px rgba(56,29,146,0.16)',
-    '0 16px 40px rgba(56,29,146,0.18)',
-    '0 20px 48px rgba(56,29,146,0.20)',
+    '0 1px 3px rgba(45,55,72,0.07)',
+    '0 2px 8px rgba(45,55,72,0.10)',
+    '0 4px 16px rgba(45,55,72,0.12)',
+    '0 8px 24px rgba(45,55,72,0.14)',
+    '0 12px 32px rgba(45,55,72,0.16)',
+    '0 16px 40px rgba(45,55,72,0.18)',
+    '0 20px 48px rgba(45,55,72,0.20)',
     ...Array(17).fill('none'),
   ],
   typography: {

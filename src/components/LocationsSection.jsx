@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Card, CardContent, Button, Chip } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent, Chip } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import DirectionsIcon from '@mui/icons-material/Directions';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -15,9 +15,10 @@ const LOCATIONS = [
     phone: '+56 9 4021 0310',
     hours: 'Abierto las 24 horas · Todos los días',
     mapsUrl: 'https://www.google.com/maps?vet=10CAAQoqAOahcKEwjIg-PwjNeUAxUAAAAAHQAAAAAQIQ..i&rlz=1C1ONGR_enCL1186CL1186&pvq=Cg0vZy8xMXh0MjlucWhsIigKImNlbnRybyBkZSByZWhhYmlsaXRhY2nDs24gdmFsZW50aWEQAhgD&lqi=CiJjZW50cm8gZGUgcmVoYWJpbGl0YWNpw7NuIHZhbGVudGlhSPKz6aTkvICACFo0EAAQARACEAMYABgBGAIYAyIiY2VudHJvIGRlIHJlaGFiaWxpdGFjacOzbiB2YWxlbnRpYZIBFXJlaGFiaWxpdGF0aW9uX2NlbnRlcg&fvr=1&cs=0&um=1&ie=UTF-8&fb=1&gl=cl&sa=X&ftid=0x966267002e434d07:0x7e92b65eb8a9d3bc',
-    gradient: 'linear-gradient(135deg, #381d92 0%, #5b3cc4 100%)',
-    color: '#381d92',
-    hoverColor: '#2d1778',
+    embedUrl: 'https://maps.google.com/maps?q=Centro+de+Rehabilitaci%C3%B3n+Valent%C3%ADa+Casablanca+Valpara%C3%ADso&output=embed&hl=es&z=15',
+    gradient: 'linear-gradient(135deg, #2D3748 0%, #4A5568 100%)',
+    color: '#2D3748',
+    hoverColor: '#1A202C',
   },
   {
     id: 2,
@@ -27,14 +28,15 @@ const LOCATIONS = [
     phone: '+56 9 7212 4604',
     hours: 'Abierto las 24 horas · Todos los días',
     mapsUrl: 'https://www.google.com/maps?vet=10CAAQoqAOahcKEwjIg-PwjNeUAxUAAAAAHQAAAAAQDA..i&rlz=1C1ONGR_enCL1186CL1186&pvq=Cg0vZy8xMXlkMTRyaGI5IigKImNlbnRybyBkZSByZWhhYmlsaXRhY2nDs24gdmFsZW50aWEQAhgD&lqi=CiJjZW50cm8gZGUgcmVoYWJpbGl0YWNpw7NuIHZhbGVudGlhSMn6rpKwvYCACFo0EAAQARACEAMYABgBGAIYAyIiY2VudHJvIGRlIHJlaGFiaWxpdGFjacOzbiB2YWxlbnRpYZIBFXJlaGFiaWxpdGF0aW9uX2NlbnRlcg&fvr=1&cs=0&um=1&ie=UTF-8&fb=1&gl=cl&sa=X&ftid=0x96633dd3de5d3b63:0x7c399660edc98b89',
-    gradient: 'linear-gradient(135deg, #5b3cc4 0%, #8f70d8 100%)',
-    color: '#5b3cc4',
-    hoverColor: '#4a2fa8',
+    embedUrl: 'https://maps.google.com/maps?q=Centro+de+Rehabilitaci%C3%B3n+Valent%C3%ADa+Paine+Santiago&output=embed&hl=es&z=15',
+    gradient: 'linear-gradient(135deg, #4A5568 0%, #718096 100%)',
+    color: '#4A5568',
+    hoverColor: '#374151',
   },
 ];
 
 const LocationsSection = () => (
-  <Box id="ubicaciones" sx={{ py: 12, bgcolor: '#F8F7FF' }}>
+  <Box id="ubicaciones" sx={{ py: 12, bgcolor: '#F7F8FA' }}>
     <Container maxWidth="lg">
       {/* Header */}
       <Box
@@ -47,14 +49,14 @@ const LocationsSection = () => (
       >
         <Typography
           variant="overline"
-          sx={{ color: '#381d92', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3 }}
+          sx={{ color: '#2D3748', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3 }}
         >
           DÓNDE ESTAMOS
         </Typography>
         <Typography
           variant="h3"
           component="h2"
-          sx={{ fontWeight: 700, mt: 1.5, mb: 2, color: '#381d92', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
+          sx={{ fontWeight: 700, mt: 1.5, mb: 2, color: '#2D3748', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
         >
           Nuestras Ubicaciones
         </Typography>
@@ -89,11 +91,11 @@ const LocationsSection = () => (
                 elevation={0}
                 sx={{
                   borderRadius: 3,
-                  border: '1px solid rgba(56,29,146,0.10)',
+                  border: '1px solid rgba(45,55,72,0.10)',
                   height: '100%',
                   overflow: 'hidden',
                   transition: 'box-shadow 0.3s',
-                  '&:hover': { boxShadow: '0 20px 48px rgba(56,29,146,0.16)' },
+                  '&:hover': { boxShadow: '0 20px 48px rgba(45,55,72,0.16)' },
                 }}
               >
                 {/* Colored header */}
@@ -138,6 +140,59 @@ const LocationsSection = () => (
                   />
                 </Box>
 
+                {/* Map embed */}
+                <Box
+                  onClick={() => window.open(loc.mapsUrl, '_blank', 'noopener,noreferrer')}
+                  sx={{ position: 'relative', height: 180, cursor: 'pointer', overflow: 'hidden' }}
+                >
+                  <Box
+                    component="iframe"
+                    src={loc.embedUrl}
+                    title={`Mapa ${loc.name}`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      border: 'none',
+                      display: 'block',
+                      pointerEvents: 'none',
+                    }}
+                  />
+                  {/* Clickable overlay with hint */}
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      display: 'flex',
+                      alignItems: 'flex-end',
+                      justifyContent: 'flex-end',
+                      p: 1,
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.18) 0%, transparent 60%)',
+                      transition: 'background 0.2s',
+                      '&:hover': { background: 'linear-gradient(to top, rgba(0,0,0,0.32) 0%, transparent 60%)' },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        bgcolor: 'white',
+                        borderRadius: '100px',
+                        px: 1.5,
+                        py: 0.5,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 0.5,
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                      }}
+                    >
+                      <DirectionsIcon sx={{ fontSize: 14, color: loc.color }} />
+                      <Typography sx={{ fontSize: '0.72rem', fontWeight: 700, color: loc.color, lineHeight: 1 }}>
+                        Ver en Maps
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Box>
+
                 <CardContent sx={{ p: 3 }}>
                   <Box sx={{ display: 'flex', gap: 1.5, mb: 2, alignItems: 'center' }}>
                     <LocationOnIcon sx={{ color: loc.color, fontSize: 20, flexShrink: 0 }} />
@@ -165,27 +220,6 @@ const LocationsSection = () => (
                     </Typography>
                   </Box>
 
-                  <Button
-                    component={motion.button}
-                    whileHover={{ y: -2, boxShadow: `0 8px 20px ${loc.color}44` }}
-                    whileTap={{ scale: 0.97 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    variant="contained"
-                    fullWidth
-                    startIcon={<DirectionsIcon />}
-                    onClick={() => window.open(loc.mapsUrl, '_blank', 'noopener,noreferrer')}
-                    sx={{
-                      bgcolor: loc.color,
-                      fontWeight: 700,
-                      py: 1.3,
-                      borderRadius: '100px',
-                      textTransform: 'none',
-                      fontSize: '0.95rem',
-                      '&:hover': { bgcolor: loc.hoverColor },
-                    }}
-                  >
-                    Cómo llegar — Google Maps
-                  </Button>
                 </CardContent>
               </Card>
             </Box>

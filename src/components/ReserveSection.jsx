@@ -26,22 +26,22 @@ const ReserveSection = () => (
             display: 'inline-flex',
             p: 1.8,
             borderRadius: '50%',
-            bgcolor: '#F0ECFF',
+            bgcolor: '#EDF2F7',
             mb: 2.5,
           }}
         >
-          <EventAvailableIcon sx={{ fontSize: 40, color: '#381d92' }} />
+          <EventAvailableIcon sx={{ fontSize: 40, color: '#2D3748' }} />
         </Box>
         <Typography
           variant="overline"
-          sx={{ display: 'block', color: '#381d92', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3, mb: 1.5 }}
+          sx={{ display: 'block', color: '#2D3748', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3, mb: 1.5 }}
         >
           RESERVA TU CITA
         </Typography>
         <Typography
           variant="h3"
           component="h2"
-          sx={{ fontWeight: 700, mb: 2.5, color: '#381d92', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
+          sx={{ fontWeight: 700, mb: 2.5, color: '#2D3748', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
         >
           Agenda tu Cita
         </Typography>
@@ -65,7 +65,7 @@ const ReserveSection = () => (
           sx={{
             textAlign: 'center',
             p: { xs: 4, md: 6 },
-            background: 'linear-gradient(135deg, #381d92 0%, #5b3cc4 100%)',
+            background: 'linear-gradient(135deg, #2D3748 0%, #4A5568 100%)',
             borderRadius: 3,
             color: 'white',
             position: 'relative',
@@ -100,13 +100,13 @@ const ReserveSection = () => (
               onClick={handleScrollToContact}
               sx={{
                 bgcolor: 'white',
-                color: '#381d92',
+                color: '#2D3748',
                 px: 5,
                 py: 1.5,
                 fontWeight: 700,
                 borderRadius: '100px',
                 fontSize: '1rem',
-                '&:hover': { bgcolor: '#f0ecff' },
+                '&:hover': { bgcolor: '#EDF2F7' },
               }}
             >
               Ir a Contacto
