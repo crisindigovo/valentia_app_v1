@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "type": "module",
   "homepage": "https://crisindigovo.github.io/Valentia-front",
-  "packageManager": "pnpm@11.3.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
