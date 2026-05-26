@@ -1,6 +1,6 @@
-import { Box, Typography, Tooltip } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import MissionSection from '../components/MissionSection';
@@ -38,30 +38,44 @@ const LandingPage = () => {
       <Footer />
 
       {/* WhatsApp FAB */}
-      <Tooltip
-        title="+56 9 4021 0310"
-        placement="left"
-        arrow
-        componentsProps={{
-          tooltip: { sx: { fontSize: '0.85rem', fontWeight: 600, bgcolor: '#1a1a1a', px: 1.5, py: 0.8 } },
-          arrow: { sx: { color: '#1a1a1a' } },
+      <Box
+        component={motion.div}
+        variants={fabVariants}
+        initial="hidden"
+        animate="visible"
+        sx={{
+          position: 'fixed',
+          bottom: { xs: 20, md: 28 },
+          right: { xs: 20, md: 28 },
+          zIndex: 1300,
         }}
       >
+        {/* Pulse rings */}
+        {[1, 2].map((i) => (
+          <Box
+            key={i}
+            component={motion.div}
+            animate={{ scale: [1, 1.9], opacity: [0.5, 0] }}
+            transition={{ duration: 2, repeat: Infinity, delay: i * 0.7, ease: 'easeOut' }}
+            sx={{
+              position: 'absolute',
+              inset: 0,
+              borderRadius: '100px',
+              bgcolor: '#25D366',
+              pointerEvents: 'none',
+            }}
+          />
+        ))}
+
         <Box
           component={motion.a}
           href={WA_URL}
           target="_blank"
           rel="noopener noreferrer"
-          variants={fabVariants}
-          initial="hidden"
-          animate="visible"
-          whileHover={{ y: -4, boxShadow: '0 16px 36px rgba(37,211,102,0.50)' }}
+          whileHover={{ y: -4, boxShadow: '0 16px 36px rgba(37,211,102,0.55)' }}
           whileTap={{ scale: 0.93 }}
           sx={{
-            position: 'fixed',
-            bottom: { xs: 20, md: 28 },
-            right: { xs: 20, md: 28 },
-            zIndex: 1300,
+            position: 'relative',
             display: 'flex',
             alignItems: 'center',
             gap: 1,
@@ -82,7 +96,7 @@ const LandingPage = () => {
             Contáctanos
           </Typography>
         </Box>
-      </Tooltip>
+      </Box>
     </Box>
   );
 };
