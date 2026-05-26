@@ -4,6 +4,8 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import PauseIcon from '@mui/icons-material/Pause';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import { motion } from 'framer-motion';
+import { fadeInUp, viewportOptions } from '../lib/animations';
 import { supabase } from '../lib/supabase';
 
 // Imágenes locales desde /assets
@@ -17,8 +19,7 @@ import imgWA4 from '../assets/WhatsApp Image 2025-10-21 at 14.18.31.jpeg';
 import imgWA5 from '../assets/WhatsApp Image 2025-10-21 at 14.18.31 (1).jpeg';
 import imgWA6 from '../assets/WhatsApp Image 2025-10-21 at 14.18.31 (2).jpeg';
 import imgWA7 from '../assets/WhatsApp Image 2025-10-21 at 14.18.31 (3).jpeg';
-import imgWA8 from '../assets/WhatsApp Image 2025-10-21 at 14.18.32 (1).jpeg';
-import imgWA9 from '../assets/WhatsApp Image 2025-10-21 at 14.18.32 (2).jpeg';
+import imgWA8 from '../assets/WhatsApp Image 2025-10-21 at 14.18.32 (2).jpeg';
 
 const FALLBACK_IMAGES = [
   { public_url: imgPergola, caption: 'Área de descanso y recuperación' },
@@ -31,8 +32,7 @@ const FALLBACK_IMAGES = [
   { public_url: imgWA5, caption: 'Terapia integral' },
   { public_url: imgWA6, caption: 'Centro Valentía' },
   { public_url: imgWA7, caption: 'Apoyo y bienestar' },
-  { public_url: imgWA8, caption: 'Equipo profesional' },
-  { public_url: imgWA9, caption: 'Transformando vidas' },
+  { public_url: imgWA8, caption: 'Transformando vidas' },
 ];
 
 const AUTOPLAY_INTERVAL = 4000;
@@ -96,26 +96,33 @@ const GallerySection = () => {
   const currentImage = images[current];
 
   return (
-    <Box id="galeria" sx={{ py: 10, bgcolor: '#f8f7ff' }}>
+    <Box id="galeria" sx={{ py: 12, bgcolor: '#F8F7FF' }}>
       <Container maxWidth="lg">
         {/* Header */}
-        <Box sx={{ textAlign: 'center', mb: 6 }}>
+        <Box
+          component={motion.div}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          sx={{ textAlign: 'center', mb: 6 }}
+        >
           <Typography
             variant="overline"
-            sx={{ color: '#381d92', fontWeight: 600, fontSize: '1rem', letterSpacing: 2 }}
+            sx={{ color: '#381d92', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3 }}
           >
             NUESTRAS INSTALACIONES
           </Typography>
           <Typography
             variant="h3"
             component="h2"
-            sx={{ fontWeight: 700, mt: 2, mb: 2, color: '#381d92', fontSize: { xs: '2rem', md: '2.75rem' }, letterSpacing: '-0.02em' }}
+            sx={{ fontWeight: 700, mt: 1.5, mb: 2, color: '#381d92', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
           >
             Galería
           </Typography>
           <Typography
-            variant="h6"
-            sx={{ maxWidth: '600px', mx: 'auto', color: 'text.secondary', fontWeight: 400, lineHeight: 1.7 }}
+            variant="body1"
+            sx={{ maxWidth: '560px', mx: 'auto', color: 'text.secondary', lineHeight: 1.75, fontSize: '1.05rem' }}
           >
             Conocé los espacios donde transformamos vidas
           </Typography>
@@ -123,7 +130,12 @@ const GallerySection = () => {
 
         {/* Carrusel principal */}
         <Box
-          sx={{ position: 'relative', borderRadius: 3, overflow: 'hidden', boxShadow: '0 20px 60px rgba(56,29,146,0.2)', bgcolor: '#000' }}
+          component={motion.div}
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          sx={{ position: 'relative', borderRadius: 3, overflow: 'hidden', boxShadow: '0 20px 60px rgba(56,29,146,0.20)', bgcolor: '#000' }}
           onMouseEnter={() => setIsPlaying(false)}
           onMouseLeave={() => setIsPlaying(true)}
         >
