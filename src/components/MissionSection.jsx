@@ -3,139 +3,202 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import GroupsIcon from '@mui/icons-material/Groups';
 import HomeIcon from '@mui/icons-material/Home';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { motion } from 'framer-motion';
+import { fadeInUp, staggerContainer, cardItem, viewportOptions } from '../lib/animations';
 
-const MissionSection = () => {
-  const pillars = [
-    {
-      icon: <FavoriteBorderIcon sx={{ fontSize: 48, color: '#381d92' }} />,
-      title: 'Atención Personalizada',
-      description: 'Creamos planes de rehabilitación únicos para cada persona, adaptados a sus necesidades específicas y objetivos individuales.',
-    },
-    {
-      icon: <GroupsIcon sx={{ fontSize: 48, color: '#381d92' }} />,
-      title: 'Equipo Multidisciplinario',
-      description: 'Contamos con especialistas en diversas áreas trabajando de forma coordinada para tu recuperación integral.',
-    },
-    {
-      icon: <HomeIcon sx={{ fontSize: 48, color: '#381d92' }} />,
-      title: 'Ambiente Acogedor',
-      description: 'Ofrecemos un espacio cómodo y cálido donde te sentirás seguro y apoyado durante todo tu proceso.',
-    },
-  ];
+const pillars = [
+  {
+    icon: <FavoriteBorderIcon sx={{ fontSize: 44 }} />,
+    title: 'Atención Personalizada',
+    description:
+      'Creamos planes de rehabilitación únicos para cada persona, adaptados a sus necesidades específicas y objetivos individuales.',
+    accent: '#381d92',
+    bg: '#F0ECFF',
+  },
+  {
+    icon: <GroupsIcon sx={{ fontSize: 44 }} />,
+    title: 'Equipo Multidisciplinario',
+    description:
+      'Contamos con especialistas en diversas áreas trabajando de forma coordinada para tu recuperación integral.',
+    accent: '#059669',
+    bg: '#ECFDF5',
+  },
+  {
+    icon: <HomeIcon sx={{ fontSize: 44 }} />,
+    title: 'Ambiente Acogedor',
+    description:
+      'Ofrecemos un espacio cómodo y cálido donde te sentirás seguro y apoyado durante todo tu proceso.',
+    accent: '#D97706',
+    bg: '#FFFBEB',
+  },
+];
 
-  return (
-    <Box id="sobre" sx={{ py: 10, bgcolor: '#F2F2FA' }}>
-      <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 8 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-            <TrendingUpIcon sx={{ fontSize: 50, color: '#381d92' }} />
-          </Box>
-          <Typography
-            variant="h3"
-            component="h2"
-            sx={{
-              fontWeight: 700,
-              mb: 3,
-              color: '#381d92',
-              fontSize: { xs: '2rem', md: '2.75rem' },
-              letterSpacing: '-0.02em',
-            }}
-          >
-            Avanzamos juntos hacia tu bienestar integral
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              maxWidth: '700px',
-              mx: 'auto',
-              color: 'text.secondary',
-              fontWeight: 400,
-              lineHeight: 1.7,
-            }}
-          >
-            Nuestra misión es guiarte hacia una recuperación plena, basada en valores de empatía, respeto y compromiso
-          </Typography>
+const MissionSection = () => (
+  <Box id="sobre" sx={{ py: 12, bgcolor: '#F8F7FF' }}>
+    <Container maxWidth="lg">
+      {/* Header */}
+      <Box
+        component={motion.div}
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOptions}
+        sx={{ textAlign: 'center', mb: 8 }}
+      >
+        <Box
+          sx={{
+            display: 'inline-flex',
+            p: 1.8,
+            borderRadius: '50%',
+            bgcolor: '#F0ECFF',
+            mb: 2.5,
+          }}
+        >
+          <TrendingUpIcon sx={{ fontSize: 42, color: '#381d92' }} />
         </Box>
+        <Typography
+          variant="overline"
+          sx={{ display: 'block', color: '#381d92', fontWeight: 700, fontSize: '0.82rem', letterSpacing: 3, mb: 1.5 }}
+        >
+          NUESTRA MISIÓN
+        </Typography>
+        <Typography
+          variant="h3"
+          component="h2"
+          sx={{ fontWeight: 700, mb: 2.5, color: '#381d92', fontSize: { xs: '1.9rem', md: '2.75rem' } }}
+        >
+          Avanzamos juntos hacia tu bienestar integral
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{ maxWidth: '660px', mx: 'auto', color: 'text.secondary', fontSize: '1.05rem', lineHeight: 1.75 }}
+        >
+          Nuestra misión es guiarte hacia una recuperación plena, basada en valores de empatía, respeto y compromiso
+        </Typography>
+      </Box>
 
-        <Grid container spacing={4}>
-          {pillars.map((pillar, index) => (
-            <Grid item xs={12} md={4} key={index}>
+      {/* Pillars */}
+      <Grid
+        container
+        spacing={3}
+        component={motion.div}
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOptions}
+      >
+        {pillars.map((pillar) => (
+          <Grid item xs={12} md={4} key={pillar.title}>
+            <Box
+              component={motion.div}
+              variants={cardItem}
+              whileHover={{ y: -8, transition: { type: 'spring', stiffness: 260, damping: 18 } }}
+              sx={{ height: '100%' }}
+            >
               <Card
                 sx={{
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
-                  transition: 'all 0.3s',
-                  '&:hover': {
-                    transform: 'translateY(-8px)',
-                    boxShadow: '0 12px 24px rgba(56, 29, 146, 0.15)',
-                  },
+                  borderRadius: 3,
+                  border: '1px solid rgba(56,29,146,0.07)',
+                  boxShadow: '0 2px 12px rgba(56,29,146,0.06)',
+                  transition: 'box-shadow 0.3s',
+                  '&:hover': { boxShadow: '0 14px 36px rgba(56,29,146,0.14)' },
                 }}
               >
                 <CardContent sx={{ flexGrow: 1, p: 4, textAlign: 'center' }}>
-                  <Box sx={{ mb: 3 }}>{pillar.icon}</Box>
-                  <Typography
-                    variant="h5"
-                    component="h3"
+                  <Box
                     sx={{
-                      fontWeight: 600,
-                      mb: 2,
-                      color: '#381d92',
+                      display: 'inline-flex',
+                      p: 2,
+                      borderRadius: '16px',
+                      bgcolor: pillar.bg,
+                      color: pillar.accent,
+                      mb: 3,
                     }}
+                  >
+                    {pillar.icon}
+                  </Box>
+                  <Typography
+                    variant="h6"
+                    component="h3"
+                    sx={{ fontWeight: 700, mb: 1.5, color: '#381d92' }}
                   >
                     {pillar.title}
                   </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: 'text.secondary',
-                      lineHeight: 1.7,
-                    }}
-                  >
+                  <Typography variant="body2" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
                     {pillar.description}
                   </Typography>
                 </CardContent>
               </Card>
-            </Grid>
-          ))}
-        </Grid>
+            </Box>
+          </Grid>
+        ))}
+      </Grid>
 
+      {/* 24/7 banner */}
+      <Box
+        component={motion.div}
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOptions}
+        sx={{ mt: 6 }}
+      >
         <Box
           sx={{
-            mt: 8,
-            p: 4,
-            bgcolor: 'white',
-            borderRadius: 2,
+            p: { xs: 4, md: 5 },
+            background: 'linear-gradient(135deg, #381d92 0%, #5b3cc4 100%)',
+            borderRadius: 3,
             textAlign: 'center',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+            color: 'white',
+            position: 'relative',
+            overflow: 'hidden',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: -40,
+              right: -40,
+              width: 160,
+              height: 160,
+              borderRadius: '50%',
+              background: 'rgba(255,255,255,0.07)',
+            },
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: -30,
+              left: -30,
+              width: 100,
+              height: 100,
+              borderRadius: '50%',
+              background: 'rgba(255,255,255,0.06)',
+            },
           }}
         >
-          <Typography
-            variant="h5"
-            sx={{
-              fontWeight: 600,
-              mb: 2,
-              color: '#381d92',
-            }}
-          >
-            Apoyo Continuo 24/7
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: 'text.secondary',
-              maxWidth: '800px',
-              mx: 'auto',
-              lineHeight: 1.7,
-            }}
-          >
-            Estamos comprometidos con tu bienestar las 24 horas del día, los 7 días de la semana.
-            Nuestro equipo está siempre disponible para brindarte el apoyo que necesitas en cada momento.
-          </Typography>
+          <Box sx={{ position: 'relative', zIndex: 1 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+              <Box sx={{ p: 1.2, bgcolor: 'rgba(255,255,255,0.15)', borderRadius: '12px' }}>
+                <AccessTimeIcon sx={{ fontSize: 32 }} />
+              </Box>
+            </Box>
+            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+              Apoyo Continuo 24/7
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ opacity: 0.9, maxWidth: '720px', mx: 'auto', lineHeight: 1.75 }}
+            >
+              Estamos comprometidos con tu bienestar las 24 horas del día, los 7 días de la semana.
+              Nuestro equipo está siempre disponible para brindarte el apoyo que necesitas en cada momento.
+            </Typography>
+          </Box>
         </Box>
-      </Container>
-    </Box>
-  );
-};
+      </Box>
+    </Container>
+  </Box>
+);
 
 export default MissionSection;
