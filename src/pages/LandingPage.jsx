@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
@@ -50,22 +50,19 @@ const LandingPage = () => {
           zIndex: 1300,
         }}
       >
-        {/* Pulse rings */}
-        {[1, 2].map((i) => (
-          <Box
-            key={i}
-            component={motion.div}
-            animate={{ scale: [1, 1.9], opacity: [0.5, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: i * 0.7, ease: 'easeOut' }}
-            sx={{
-              position: 'absolute',
-              inset: 0,
-              borderRadius: '100px',
-              bgcolor: '#25D366',
-              pointerEvents: 'none',
-            }}
-          />
-        ))}
+        {/* Pulse ring */}
+        <Box
+          component={motion.div}
+          animate={{ scale: [1, 1.5], opacity: [0.35, 0] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: 'easeOut' }}
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            borderRadius: '50%',
+            bgcolor: '#25D366',
+            pointerEvents: 'none',
+          }}
+        />
 
         <Box
           component={motion.a}
@@ -78,12 +75,12 @@ const LandingPage = () => {
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
-            gap: 1,
+            justifyContent: 'center',
             bgcolor: '#25D366',
             color: 'white',
-            px: 2.5,
-            py: 1.4,
-            borderRadius: '100px',
+            width: 56,
+            height: 56,
+            borderRadius: '50%',
             boxShadow: '0 4px 20px rgba(37,211,102,0.40)',
             textDecoration: 'none',
             cursor: 'pointer',
@@ -91,10 +88,7 @@ const LandingPage = () => {
             transition: 'background-color 0.2s',
           }}
         >
-          <WhatsAppIcon sx={{ fontSize: 26 }} />
-          <Typography sx={{ fontWeight: 700, fontSize: '0.9rem', lineHeight: 1 }}>
-            Contáctanos
-          </Typography>
+          <WhatsAppIcon sx={{ fontSize: 30 }} />
         </Box>
       </Box>
     </Box>
